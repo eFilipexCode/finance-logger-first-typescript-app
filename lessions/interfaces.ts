@@ -11,10 +11,10 @@ interface IsPerson {
     spend(a: number): number;
 };
 
-// We don't use interface to create/instaciate objects. We are just giving a "sketch"
-// to an object;
+// We don't use interfaces to create/instanciate objects. We are just giving a "sketch"
+// to an object and saying what this should have as properties
 
-// Here, since me is using the IsPerson interface, it expects to have the properties we coded
+// Here, since "me" is using the IsPerson interface, it expects to have the properties we coded
 // e. g.:
 const me: IsPerson = {
     name: 'Emmanuel',
