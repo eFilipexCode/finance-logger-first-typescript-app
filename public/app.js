@@ -9,8 +9,6 @@ import { Payment } from './classes/Payments.js';
 // docs.push(docTwo);
 var invOne = new Invoice('mario', 'work on the luigi website', 250);
 var invTwo = new Invoice('mario', 'work on the luigi website', 200);
-console.log(invOne);
-console.log(invTwo);
 var invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
@@ -22,13 +20,13 @@ var amount = document.querySelector('#amount');
 form.addEventListener('submit', function (e) {
     e.preventDefault();
     console.log(type.value, toFrom.value, details.value, amount.value);
+    var doc;
+    if (type.value === 'invoice') {
+        doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
+    }
+    else {
+        doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
+    }
+    ;
+    console.log(doc);
 });
-var doc;
-if (type.value === 'invoice') {
-    doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
-}
-else {
-    doc = new Payment(toFrom.value, details.value, amount.valueAsNumber);
-}
-;
-console.log(doc);
