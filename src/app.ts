@@ -1,4 +1,16 @@
 import { Invoice } from './classes/Invoice.js';
+import { Payments } from './classes/Payments.js';
+import { HasFormatter } from './interfaces/hasFormatter';
+
+let docOne: HasFormatter;
+let docTwo: HasFormatter;
+
+docOne = new Invoice('yoshi', 'web work', 250);
+docTwo = new Payments('mario', 'plumbing work', 200);
+
+let docs: HasFormatter[] = [];
+docs.push(docOne);
+docs.push(docTwo);
 
 const invOne = new Invoice('mario', 'work on the luigi website', 250);
 const invTwo = new Invoice('mario', 'work on the luigi website', 200);
