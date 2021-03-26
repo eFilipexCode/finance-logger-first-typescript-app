@@ -1,6 +1,6 @@
 import { HasFormatter } from '../interfaces/hasFormatter';
 
-export class Payments implements HasFormatter {
+export class Payment implements HasFormatter {
     constructor(
         public recipient: string,
         private details: string,
@@ -12,4 +12,4 @@ export class Payments implements HasFormatter {
     };
 };
 
-export default Payments;
+export default Payment;

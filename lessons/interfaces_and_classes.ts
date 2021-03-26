@@ -1,4 +1,4 @@
-import { Payments } from '../src/classes/Payments';
+import { Payment } from '../src/classes/Payments';
 interface HasFormatter {
     format(): string;
 };
@@ -25,7 +25,7 @@ let docOne: HasFormatter;
 let docTwo: HasFormatter;
 
 docOne = new Invoice('yoshi', 'web work', 250);
-docTwo = new Payments('mario', 'plumbing work', 200);
+docTwo = new Payment('mario', 'plumbing work', 200);
 
 
 // using with arrays...
