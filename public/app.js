@@ -1,4 +1,5 @@
 import { Invoice } from './classes/Invoice.js';
+import { ListTemplate } from './classes/ListTemplate.js';
 import { Payment } from './classes/Payments.js';
 // let docOne: HasFormatter;
 // let docTwo: HasFormatter;
@@ -17,9 +18,9 @@ var type = document.querySelector('#type');
 var toFrom = document.querySelector('#toFrom');
 var details = document.querySelector('#details');
 var amount = document.querySelector('#amount');
+var container = document.querySelector('.item-list');
 form.addEventListener('submit', function (e) {
     e.preventDefault();
-    console.log(type.value, toFrom.value, details.value, amount.value);
     var doc;
     if (type.value === 'invoice') {
         doc = new Invoice(toFrom.value, details.value, amount.valueAsNumber);
@@ -29,4 +30,6 @@ form.addEventListener('submit', function (e) {
     }
     ;
     console.log(doc);
+    var listItem = new ListTemplate(container);
+    listItem.render(doc, "New " + type.value, 'start');
 });
